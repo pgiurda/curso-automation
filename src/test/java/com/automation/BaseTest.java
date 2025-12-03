@@ -16,8 +16,9 @@ public class BaseTest {
     public void setup() {
         ChromeOptions options = new ChromeOptions();
 
-        options.addArguments("start-maxized");
+        options.addArguments("start-maximized");
         options.addArguments("incognito");
+        options.addArguments("--ignore-certificate-errors");
 
         //options.addArguments("headless");
 

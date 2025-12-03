@@ -13,6 +13,7 @@ public class CreateAccountPage extends BasePage {
     private By confirmPassword = By.id("input-confirm");
     private By checkbox = By.name("agree");
     private By continueBtn = By.xpath("//input[@value=\"Continue\"]");
+    private By textIncompletedField = By.xpath("//div[@class=\"text-danger\"]");
 
     public CreateAccountPage(WebDriver driver) {
         super(driver);
@@ -29,9 +30,18 @@ public class CreateAccountPage extends BasePage {
         sendKeys(this.phone, phone);
         sendKeys(this.password, password);
         sendKeys(this.confirmPassword, password);
-
         click(checkbox);
-
         click(continueBtn);
+    }
+    public void invalidRegister(String email,
+                                String password) {
+        sendKeys(this.email, email);
+        sendKeys(this.password, password);
+        sendKeys(this.confirmPassword, password);
+        click(checkbox);
+        click(continueBtn);
+    }
+    public boolean textIncompletedFieldIsDisplayed(){
+        return isDisplayed(textIncompletedField);
     }
 }

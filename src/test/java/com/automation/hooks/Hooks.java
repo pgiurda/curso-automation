@@ -45,10 +45,9 @@ public class Hooks {
 
         options.addArguments("start-maximized");
         options.addArguments("incognito");
-
         //options.addArguments("headless");
         //options.setCapability("headless", properties.getProperty("headless"));
-
+        options.addArguments("--ignore-certificate-errors");
         options.setPageLoadTimeout(Duration.ofSeconds(60));
 
         // ruta al binario del driver
