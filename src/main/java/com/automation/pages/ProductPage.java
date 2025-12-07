@@ -2,8 +2,8 @@ package com.automation.pages;
 
 import org.openqa.selenium.By;
 
-public class CamerasPage {
-    private By cameraProductBtn = By.xpath("//a[text()=\"Canon EOS 5D\"]");
+public class ProductPage {
+    ;
     private By inputCantProducto = By.id("input-quantity");
     private By addToCardBtn = By.id("button-cart");
     private By selectOption = By.id("input-option226");

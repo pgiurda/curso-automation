@@ -20,6 +20,6 @@ public class InvalidLoginDefinitions {
 
     @Y("rellena los campos con datos invalidos para hacer login")
     public void rellenaLosCamposConDatosInvalidosParaHacerLogin() {
-        loginPage.login("pepito@hotmail.com","123456");
+        loginPage.login("pepito1@hotmail.com","123456");
     }
 }
