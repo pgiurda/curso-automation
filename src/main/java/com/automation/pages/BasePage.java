@@ -42,4 +42,8 @@ public class BasePage {
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         element.click();
     }
+    public String getLocatorText(By locator){
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return element.getText().trim();
+    }
 }

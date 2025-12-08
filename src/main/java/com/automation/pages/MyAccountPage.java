@@ -15,5 +15,8 @@ public class MyAccountPage extends BasePage {
     public boolean titleIsDisplayed() {
         return isDisplayed(title);
     }
+    public void goToCameras(){
+        click(camerasBtn);
+    }
 
 }
