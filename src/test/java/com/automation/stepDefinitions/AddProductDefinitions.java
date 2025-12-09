@@ -43,4 +43,8 @@ public class AddProductDefinitions {
     }
 
 
+    @Y("se continua con la compra")
+    public void seContinuaConLaCompra() {
+        productPage.goToContinueShopping();
+    }
 }

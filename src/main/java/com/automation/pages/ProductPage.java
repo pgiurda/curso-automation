@@ -12,6 +12,7 @@ public class ProductPage extends BasePage{
     private By cartBtn = By.xpath("//button[@class=\"btn btn-inverse btn-block btn-lg dropdown-toggle\"]");
     private By viewCartBtn = By.xpath("//a/strong[text()=\" View Cart\"]");
     private By removeProductBtn = By.xpath("//button[@title=\"Remove\"]");
+    private By continueShoppingBtn = By.xpath("//a[contains(text(),\"Continue\")]");
 
     public ProductPage(WebDriver driver) {
         super(driver);
@@ -28,5 +29,8 @@ public class ProductPage extends BasePage{
         click(addToCardBtn);
         click(cartBtn);
         click(viewCartBtn);
+    }
+    public void goToContinueShopping(){
+        click(continueShoppingBtn);
     }
 }
