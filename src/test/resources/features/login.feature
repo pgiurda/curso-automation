@@ -1,5 +1,6 @@
 #language: es
 
+@regression
 Característica: Login
 
   @TEST-1236

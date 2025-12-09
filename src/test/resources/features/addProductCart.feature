@@ -1,5 +1,4 @@
 #language: es
-
   Característica: Agregar producto al carrito
 
     @TEST-1240

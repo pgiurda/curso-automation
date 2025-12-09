@@ -1,5 +1,6 @@
 #language: es
 
+@regression
 Característica: Log-out
 
   @TEST-1239

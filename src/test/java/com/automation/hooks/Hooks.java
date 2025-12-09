@@ -45,13 +45,17 @@ public class Hooks {
 
         options.addArguments("start-maximized");
         options.addArguments("incognito");
-        //options.addArguments("headless");
-        //options.setCapability("headless", properties.getProperty("headless"));
+
+        if (getProperty("headless").equals("true")){
+            options.addArguments("headless");}
+
         options.addArguments("--ignore-certificate-errors");
         options.setPageLoadTimeout(Duration.ofSeconds(60));
 
         // ruta al binario del driver
+        if (!getProperty("docker_enable").equals("true")){
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
+        }
 
         return new ChromeDriver(options);
     }
@@ -61,7 +65,9 @@ public class Hooks {
 
         options.addArguments("--private");
         options.setPageLoadTimeout(Duration.ofSeconds(60));
+        if (!getProperty("docker_enable").equals("true")){
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/geckodriver.exe");
+        }
 
         return new FirefoxDriver(options);
     }

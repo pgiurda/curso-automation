@@ -5,7 +5,6 @@ import com.automation.pages.LIstProductPage;
 import com.automation.pages.MyAccountPage;
 import com.automation.pages.ProductPage;
 import com.automation.pages.ShoppingCartPage;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.testng.Assert;
