@@ -24,6 +24,7 @@ public class LoginDefinitions {
     public void quiereHacerLoginEnLaPagina() {
         homePage.goToLogin();
     }
+
     @Y("rellena los campos para hacer login")
     public void rellenaLosCamposParaHacerLogin() {
         loginPage.login(Hooks.getProperty("username"), Hooks.getProperty("password"));

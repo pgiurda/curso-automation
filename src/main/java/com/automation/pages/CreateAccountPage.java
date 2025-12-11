@@ -33,6 +33,7 @@ public class CreateAccountPage extends BasePage {
         click(checkbox);
         click(continueBtn);
     }
+
     public void invalidRegister(String email,
                                 String password) {
         sendKeys(this.email, email);
@@ -41,7 +42,8 @@ public class CreateAccountPage extends BasePage {
         click(checkbox);
         click(continueBtn);
     }
-    public boolean textIncompletedFieldIsDisplayed(){
+
+    public boolean textIncompletedFieldIsDisplayed() {
         return isDisplayed(textIncompletedField);
     }
 }

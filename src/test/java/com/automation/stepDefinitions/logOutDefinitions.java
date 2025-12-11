@@ -12,10 +12,11 @@ public class logOutDefinitions {
     private HomePage homePage;
     private LogoutPage logoutPage;
 
-    public logOutDefinitions(){
+    public logOutDefinitions() {
         this.homePage = new HomePage(Hooks.getDriver());
         this.logoutPage = new LogoutPage(Hooks.getDriver());
     }
+
     @Y("vuelve al dropdown para desloguearse")
     public void vuelveAlDropdownParaDesloguearse() {
         homePage.goToLogout();
@@ -23,11 +24,6 @@ public class logOutDefinitions {
 
     @Entonces("se realiza el logout correctamente")
     public void seRealizaElLogoutCorrectamente() {
-        Assert.assertTrue(logoutPage.logoutTitleisDisplayed(),"No se desloguea correctamente");
-    }
-
-    @Y("regresa la home presionando el button")
-    public void regresaLaHomePresionandoElButton() {
-       logoutPage.goToContinueBtn();
+        Assert.assertTrue(logoutPage.logoutTitleisDisplayed(), "No se desloguea correctamente");
     }
 }

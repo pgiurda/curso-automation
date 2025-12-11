@@ -48,7 +48,8 @@ public class HomePage extends BasePage {
         click(myAccountDropdown);
         click(registerDropdown);
     }
-    public void goToLogout(){
+
+    public void goToLogout() {
         click(myAccountDropdown);
         click(logoutBtn);
     }

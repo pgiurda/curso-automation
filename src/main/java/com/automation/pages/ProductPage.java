@@ -2,8 +2,9 @@ package com.automation.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 //Esta es la pàgina del producto, en este caso, camara CANON
-public class ProductPage extends BasePage{
+public class ProductPage extends BasePage {
     ;
     private By inputCantProducto = By.id("input-quantity");
     private By addToCardBtn = By.id("button-cart");
@@ -17,7 +18,8 @@ public class ProductPage extends BasePage{
     public ProductPage(WebDriver driver) {
         super(driver);
     }
-    public void addProductToCart(){
+
+    public void addProductToCart() {
         click(selectOption);
         click(colorOptionRed);
         //En esta parte del codigo, tuve que borrar los productos del carrito que se agregaban antes de hacer click en "Add to Cart"
@@ -30,7 +32,8 @@ public class ProductPage extends BasePage{
         click(cartBtn);
         click(viewCartBtn);
     }
-    public void goToContinueShopping(){
+
+    public void goToContinueShopping() {
         click(continueShoppingBtn);
     }
 }

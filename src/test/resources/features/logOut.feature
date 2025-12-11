@@ -10,4 +10,3 @@ Característica: Log-out
     Y rellena los campos para hacer login
     Y vuelve al dropdown para desloguearse
     Entonces se realiza el logout correctamente
-    Y regresa la home presionando el button

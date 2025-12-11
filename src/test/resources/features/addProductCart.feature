@@ -9,4 +9,3 @@
       Y busca un producto
       Y lo agrega al carrito
       Entonces se verifica que el producto se haya agregado correctamente
-      Y se continua con la compra

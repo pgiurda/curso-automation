@@ -46,15 +46,16 @@ public class Hooks {
         options.addArguments("start-maximized");
         options.addArguments("incognito");
 
-        if (getProperty("headless").equals("true")){
-            options.addArguments("headless");}
+        if (getProperty("headless").equals("true")) {
+            options.addArguments("headless");
+        }
 
         options.addArguments("--ignore-certificate-errors");
         options.setPageLoadTimeout(Duration.ofSeconds(60));
 
         // ruta al binario del driver
-        if (!getProperty("docker_enable").equals("true")){
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
+        if (!getProperty("docker_enable").equals("true")) {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
         }
 
         return new ChromeDriver(options);
@@ -65,8 +66,8 @@ public class Hooks {
 
         options.addArguments("--private");
         options.setPageLoadTimeout(Duration.ofSeconds(60));
-        if (!getProperty("docker_enable").equals("true")){
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/geckodriver.exe");
+        if (!getProperty("docker_enable").equals("true")) {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/geckodriver.exe");
         }
 
         return new FirefoxDriver(options);
@@ -74,10 +75,10 @@ public class Hooks {
 
     @After
     public void tearDown(Scenario scenario) {
-        if(scenario.isFailed()){
+        if (scenario.isFailed()) {
             TakesScreenshot ts = (TakesScreenshot) driver;
             byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot,"image/png","screenshot");
+            scenario.attach(screenshot, "image/png", "screenshot");
         }
         if (driver != null) {
             driver.quit();
@@ -91,15 +92,16 @@ public class Hooks {
     public static String getProperty(String property) {
         return properties.getProperty(property);
     }
-    private Properties loadProperties() throws IOException{
+
+    private Properties loadProperties() throws IOException {
         Properties props = new Properties();
         props.load(
                 new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/config.properties"));
-                System.getProperties().forEach((key, value) -> {
-                    if (props.containsKey(key)){
-                        props.setProperty(key.toString(),value.toString());
-                    }
+        System.getProperties().forEach((key, value) -> {
+            if (props.containsKey(key)) {
+                props.setProperty(key.toString(), value.toString());
+            }
         });
-                return props;
+        return props;
     }
 }

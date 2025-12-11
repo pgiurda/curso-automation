@@ -11,7 +11,7 @@ import org.testng.Assert;
 public class CreateInvalidAccount {
     private CreateAccountPage createAccountPage;
 
-    public CreateInvalidAccount(){
+    public CreateInvalidAccount() {
         this.createAccountPage = new CreateAccountPage(Hooks.getDriver());
     }
 
@@ -22,6 +22,6 @@ public class CreateInvalidAccount {
 
     @Entonces("se verifica que la cuenta no se creo correctamente")
     public void seVerificaQueLaCuentaNoSeCreoCorrectamente() {
-        Assert.assertTrue(createAccountPage.textIncompletedFieldIsDisplayed(),"Se permite no completar estos campos");
+        Assert.assertTrue(createAccountPage.textIncompletedFieldIsDisplayed(), "Se permite no completar estos campos");
     }
 }

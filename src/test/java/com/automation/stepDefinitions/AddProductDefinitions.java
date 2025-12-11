@@ -28,6 +28,7 @@ public class AddProductDefinitions {
         lIstProductPage.goToProduct();
 
     }
+
     //Intente agregar otro paso para evitar que se agreguen mas productos de los solicitados
     @Y("lo agrega al carrito")
     public void loAgregaAlCarrito() {
@@ -36,14 +37,8 @@ public class AddProductDefinitions {
 
     @Entonces("se verifica que el producto se haya agregado correctamente")
     public void seVerificaQueElProductoSeHayaAgregadoCorrectamente() {
-        Assert.assertEquals(shoppingCartPage.getProductCartName(),"Canon EOS 5D","El producto no coincide");
-        Assert.assertEquals(shoppingCartPage.getUnitPrice(),"$80.00", "El precio unitario no coincide");
-        Assert.assertEquals(shoppingCartPage.getTotalPrice(),"$240.00","El precio total no coincide");
-    }
-
-
-    @Y("se continua con la compra")
-    public void seContinuaConLaCompra() {
-        productPage.goToContinueShopping();
+        Assert.assertEquals(shoppingCartPage.getProductCartName(), "Canon EOS 5D", "El producto no coincide");
+        Assert.assertEquals(shoppingCartPage.getUnitPrice(), "$80.00", "El precio unitario no coincide");
+        Assert.assertEquals(shoppingCartPage.getTotalPrice(), "$240.00", "El precio total no coincide");
     }
 }
